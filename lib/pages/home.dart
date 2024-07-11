@@ -50,12 +50,19 @@ class _HomePageState extends State<HomePage> {
                 
                 height: 250,
                 color: Colors.red,
-                // child: ListView.builder(
-                //   itemBuilder: (context, index){
-                //     return Container();
-                //   }
+                child: ListView.builder(
+                  itemCount: categories.length,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (context, index){
+                    return Container(
+                      decoration: BoxDecoration(
+                        color: categories[index].boxColor
+                      ),
+                    );
+                    
+                  }
                   
-                //   ),
+                  ),
               ),
             ],
           )
