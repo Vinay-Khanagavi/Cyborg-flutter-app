@@ -69,6 +69,7 @@ class _HomePageState extends State<HomePage> {
                   left:20,
                   right:20
                 ),
+                
                 separatorBuilder: (context, index)=>SizedBox(width: 25,),
                 itemBuilder: (context, index){
                   return Container(
