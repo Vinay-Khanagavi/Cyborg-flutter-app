@@ -33,14 +33,14 @@ class CategoryModel{
           CategoryModel(
             name: 'level 3',
             iconpath: 'assets/gif/gif_3.gif',
-            boxColor: Color(0xffF5A623)
+            boxColor: Color(0xffC58BF2)
             )
         );
         categories.add(
           CategoryModel(
             name: 'level 4',
             iconpath: 'assets/gif/gif_4.gif',
-            boxColor: Color(0xffF5A623)
+            boxColor: Color(0xff92A3FD)
             )
         );
 

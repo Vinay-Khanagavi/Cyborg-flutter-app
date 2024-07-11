@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+
 class HomePage extends StatefulWidget{
   HomePage({super.key});
 
@@ -18,6 +19,8 @@ class _HomePageState extends State<HomePage> {
     categories = CategoryModel.getCategories();
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     _getCategories();
@@ -29,47 +32,87 @@ class _HomePageState extends State<HomePage> {
         children: [
           _searchField(),
           SizedBox(height: 40,),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Text(
-                  "Category",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 15,),
-
-              Container(
-                
-                height: 250,
-                color: Colors.red,
-                child: ListView.builder(
-                  itemCount: categories.length,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index){
-                    return Container(
-                      decoration: BoxDecoration(
-                        color: categories[index].boxColor
-                      ),
-                    );
-                    
-                  }
-                  
-                  ),
-              ),
-            ],
-          )
+          _categoriesSection(),
+          SizedBox(height: 40,),
+          
+          
         ],
       )
 
     );
+  }
+
+  Column _categoriesSection() {
+    return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text(
+                "Category",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600
+                ),
+              ),
+            ),
+
+            SizedBox(height: 15,),
+
+            Container(
+              height: 300,
+              child: ListView.separated(
+                itemCount: categories.length,
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.only(
+                  left:20,
+                  right:20
+                ),
+                separatorBuilder: (context, index)=>SizedBox(width: 25,),
+                itemBuilder: (context, index){
+                  return Container(
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: categories[index].boxColor.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(16)
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 180,
+                          width: 260,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.white,
+                            shape: BoxShape.rectangle 
+                          ),
+                          child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ClipOval(
+                            child: Image.asset(categories[index].iconpath, fit: BoxFit.cover),
+                          ),
+                          ),
+                        ),
+                        Text(
+                          categories[index].name,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
+                            fontSize: 20 
+                          ),
+                        )
+                      ],
+                    )
+                  );
+                  
+                }
+                
+                ),
+            ),
+          ],
+        );
   }
 
   Container _searchField() {
