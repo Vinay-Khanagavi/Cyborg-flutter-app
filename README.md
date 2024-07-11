@@ -3,15 +3,9 @@
 A new Flutter project.
 
 ## Getting Started
+There is a notion link below but it's still incomplete and needs a lot to add !!!!
 
-This project is a starting point for a Flutter application.
+![image](https://github.com/Vinay-Khanagavi/Cyborg-flutter-app/assets/116386393/6b9fb89d-aa6f-4966-b353-2e975fe8cb8e)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Cyborg-flutter-app
+https://brave-lilac-b30.notion.site/keypoints-for-your-next-Flutter-project-ac1e10afb5f9420abbacdd9ac6b2b2a3?pvs=4
