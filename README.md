@@ -1,6 +1,5 @@
 # cyborg
 Task : Flutter game
-A new Flutter project.
 
 ## Getting Started
 There is a notion link below but it's still incomplete and needs a lot to add !!!
